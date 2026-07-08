@@ -1,0 +1,380 @@
+/* ============================================================================
+   Tango Mode for Mixxx - landing page
+   Art direction: a midnight milonga. Deep evening-blue ground, RED as the single
+   passion accent (actions, the "Tango" wordmark, the diamond spark, the yes-marks),
+   BLUE as the cool structure (links, labels, secondary actions, ambient glow), and
+   moonlight-silver text.
+   Display face: Playfair Display / Cormorant (wordmark). Body + labels: Inter.
+   Signature: hairline frames + a red diamond divider + a faint groove halo.
+   ========================================================================== */
+
+:root {
+  --ink:      #090d18;   /* midnight, deep blue-black ground */
+  --ink-2:    #111730;   /* panels, deep navy               */
+  --ink-3:    #19203c;   /* raised / hover                  */
+  --line:     #2a3357;   /* steel-blue hairlines            */
+  --text:     #e9edfb;   /* moonlight - primary text        */
+  --muted:    #97a1c4;   /* slate blue - secondary text     */
+  --red:      #e6314e;   /* tango red - passion / action    */
+  --red-hi:   #ff516b;   /* bright red - hover              */
+  --blue:     #6f9bff;   /* evening azure - links / cool     */
+  --blue-hi:  #9bbcff;   /* bright azure                    */
+  --on-red:   #fff4f5;   /* text on red actions             */
+
+  --wrap: 1080px;
+  --shadow: 0 24px 60px rgba(0,0,0,.6);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 520px at 50% -6%, rgba(230,49,78,.11), transparent 62%),
+    radial-gradient(900px 480px at 50% 108%, rgba(111,155,255,.07), transparent 60%),
+    var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Type ---------- */
+h1, h2, h3 { font-family: "Playfair Display", Georgia, serif; font-weight: 700; margin: 0; }
+.display { font-family: "Playfair Display", Georgia, serif; }
+
+a { color: var(--blue); text-decoration: none; }
+a:hover { color: var(--blue-hi); }
+
+code {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: .88em;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: .12em .45em;
+  color: var(--blue-hi);
+}
+.muted { color: var(--muted); }
+
+/* ---------- Layout primitives ---------- */
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+.section { padding: 96px 24px; }
+
+.eyebrow {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0 0 18px;
+}
+
+.section-head { max-width: 660px; margin: 0 auto 26px; text-align: center; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); letter-spacing: .01em; }
+.section-head p { color: var(--muted); font-size: 1.06rem; margin: 14px auto 0; max-width: 560px; }
+
+/* ---------- Signature: red diamond divider ---------- */
+.divider {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  max-width: 520px; margin: 0 auto;
+}
+.divider::before, .divider::after {
+  content: ""; height: 1px; flex: 1;
+  background: linear-gradient(90deg, transparent, var(--line));
+}
+.divider::after { transform: scaleX(-1); }
+.diamond {
+  width: 12px; height: 12px; flex: none; transform: rotate(45deg);
+  background: var(--red);
+  box-shadow: 0 0 0 4px var(--ink), 0 0 0 5px var(--line), 0 0 16px rgba(230,49,78,.55);
+}
+
+/* ---------- Hairline frame ---------- */
+.engraved { position: relative; background: var(--ink-2); border: 1px solid var(--line); }
+.engraved::after {
+  content: ""; position: absolute; inset: 5px; pointer-events: none;
+  border: 1px solid rgba(111,155,255,.16);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: .6em;
+  font-family: "Inter", sans-serif;
+  font-weight: 600; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  padding: .95em 1.6em; border-radius: 4px;
+  border: 1px solid transparent; cursor: pointer;
+  transition: background .16s ease, color .16s ease, border-color .16s ease, transform .12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--primary { background: var(--red); color: var(--on-red); box-shadow: 0 10px 28px rgba(230,49,78,.28); }
+.btn--primary:hover { background: var(--red-hi); color: var(--on-red); }
+.btn--ghost { border-color: var(--line); color: var(--blue-hi); }
+.btn--ghost:hover { border-color: var(--blue); color: var(--blue-hi); background: rgba(111,155,255,.08); }
+.btn--block { display: flex; width: 100%; justify-content: center; }
+.btn__play { font-size: .82em; color: var(--red); }
+.btn--primary .btn__play { color: var(--on-red); }
+
+/* ---------- Fork banner ---------- */
+.fork-banner {
+  display: flex; gap: .55em; justify-content: center; align-items: center;
+  text-align: center; padding: 9px 20px;
+  background: var(--ink-2);
+  border-bottom: 1px solid var(--line);
+  font-size: .86rem; color: var(--muted);
+}
+.fork-banner strong { color: var(--text); }
+.fork-banner__icon { color: var(--red-hi); }
+.fork-banner a { white-space: nowrap; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(9,13,24,.82); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner {
+  max-width: var(--wrap); margin: 0 auto; padding: 13px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: .5em; }
+.brand__mark-svg { width: 28px; height: 28px; flex: none; }
+.brand__name {
+  font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700; letter-spacing: .005em;
+  font-size: 1.5rem; line-height: 1; color: var(--text);
+}
+.brand__name em { font-style: italic; color: var(--red-hi); }
+.brand__sub { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: .95rem; color: var(--muted); }
+.nav__links { display: flex; gap: 30px; }
+.nav__links a {
+  color: var(--muted); font-size: .78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .14em;
+}
+.nav__links a:hover { color: var(--blue-hi); }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; padding: 84px 24px 46px; overflow: hidden; text-align: center; }
+/* Faint record grooves + a warm red heart glowing in the blue evening. */
+.hero__grooves {
+  position: absolute; left: 50%; top: -10px; width: 820px; height: 700px;
+  transform: translateX(-50%); pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 50% 40%, transparent 0 18px, rgba(111,155,255,.06) 18px 19px),
+    radial-gradient(closest-side, rgba(230,49,78,.14), rgba(111,155,255,.05) 52%, transparent 72%);
+  -webkit-mask: radial-gradient(circle at 50% 40%, #000 18%, transparent 72%);
+          mask: radial-gradient(circle at 50% 40%, #000 18%, transparent 72%);
+}
+.hero__inner { position: relative; max-width: 780px; margin: 0 auto; }
+
+.hero__wordmark { display: inline-block; text-align: left; margin: 0 0 20px; line-height: 1; }
+.hero__wordmark-main {
+  display: flex; align-items: center; gap: 20px;
+  font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700;
+  font-size: clamp(3.2rem, 10vw, 6rem); line-height: 1; color: var(--text);
+  letter-spacing: .005em;
+  /* Room below the caps so the "g" descender clears the "for Mixxx" sub-line. */
+  padding-bottom: 0.2em;
+}
+/* Plain vertical centring on the caps line, same as the nav mark. */
+.hero__mark { width: 76px; height: 76px; flex: none; }
+.hero__wordmark-main em { font-style: italic; color: var(--red-hi); }
+/* Sub-line centred under the wordmark line, so "for Mixxx" sits under the middle
+   of "Tango" (its "f" under the "g"). The padding-bottom on .hero__wordmark-main
+   keeps the "g" descender clear of it, so no overlap. */
+.hero__wordmark-sub {
+  display: block; text-align: center; margin-top: 2px;
+  font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600;
+  font-size: clamp(1.5rem, 3.6vw, 2.3rem); color: var(--muted); letter-spacing: .02em;
+}
+
+.hero__tagline {
+  font-family: "Playfair Display", Georgia, serif; font-weight: 700;
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  letter-spacing: .01em; line-height: 1.14; margin: 0 0 .5em; color: var(--text);
+}
+.hero__tagline em { color: var(--red-hi); font-style: italic; }
+.hero__lede { font-size: 1.16rem; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
+.hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.hero__meta {
+  margin-top: 26px; color: var(--muted); font-size: .74rem;
+  text-transform: uppercase; letter-spacing: .18em; font-weight: 600;
+}
+.hero__meta b { color: var(--text); font-weight: 600; }
+
+/* ---------- Hero screenshot ---------- */
+.shot { padding: 20px 24px 40px; }
+.shot__frame { max-width: var(--wrap); margin: 0 auto; padding: 10px; }
+.shot__caption {
+  display: flex; align-items: center; gap: 10px; justify-content: center;
+  padding: 8px 0 12px; color: var(--blue); font-family: "Inter", sans-serif;
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .2em; font-weight: 600;
+}
+.shot__frame img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.shot figcaption { text-align: center; color: var(--muted); font-size: .9rem; margin-top: 14px; }
+
+/* ---------- Features: liner-notes rows ---------- */
+.liner { background: linear-gradient(180deg, transparent, rgba(0,0,0,.22)); }
+/* Full-window feature clips: a wide showcase (video on top, caption centred below)
+   so every clip is the same size and large enough for its toolbar text to read. */
+.liner__rows { max-width: 1250px; margin: 0 auto; }
+.liner__row { padding: 44px 0; }
+.liner__row + .liner__row { border-top: 1px solid rgba(151,161,196,.16); }
+.liner__media { padding: 0; }
+.liner__media img,
+.liner__media video { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; background: var(--ink-2); }
+.liner__text { max-width: 680px; margin: 22px auto 0; text-align: center; }
+.liner__no {
+  font-family: "Inter", sans-serif; color: var(--blue); font-size: .72rem;
+  text-transform: uppercase; letter-spacing: .22em; font-weight: 600; margin-bottom: 12px;
+}
+.liner__text h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); color: var(--text); letter-spacing: .01em; margin-bottom: .5em; }
+.liner__text p { color: var(--muted); margin: 0; }
+/* "What to look for" cue - a distinct colour so it reads as a hint, not body copy. */
+.liner__text .liner__watch { color: var(--red-hi); font-style: italic; margin-top: 14px; }
+
+/* ---------- Download ---------- */
+.dl-grid { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.dl-card { padding: 28px; }
+.dl-card h3 {
+  font-size: 1.15rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--text); margin-bottom: 4px;
+}
+.dl-card__os { color: var(--blue-hi); }
+.dl-card__hash { font-size: .8rem; margin: 14px 0 20px; word-break: break-all; color: var(--muted); }
+.callout {
+  background: var(--ink); border: 1px solid var(--line);
+  border-left: 3px solid var(--red); border-radius: 4px; padding: 14px 18px; font-size: .9rem;
+}
+.callout summary { cursor: pointer; font-weight: 600; color: var(--text); font-size: .92rem; }
+.callout summary::marker { color: var(--red-hi); }
+.callout ol { margin: 12px 0 8px; padding-left: 20px; }
+.callout li { margin: 6px 0; color: var(--muted); }
+.callout li strong { color: var(--text); }
+.callout code { display: inline-block; margin-top: 5px; }
+.dl-trust { text-align: center; color: var(--muted); margin: 40px auto 0; max-width: 620px; }
+
+/* ---------- Source ---------- */
+.split { max-width: var(--wrap); margin: 0 auto; display: grid; grid-template-columns: 1.15fr .85fr; gap: 44px; align-items: center; }
+.split__text h2 { font-size: clamp(1.8rem, 3.4vw, 2.4rem); letter-spacing: .02em; }
+.split__text p { color: var(--muted); }
+.split__cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+.split__aside { padding: 26px; }
+.split__aside p { margin: 0; color: var(--muted); font-size: .95rem; }
+.split__aside strong { color: var(--blue-hi); font-weight: 700; }
+
+/* ---------- Build / Support ---------- */
+.center { text-align: center; }
+.support { max-width: 620px; margin: 0 auto; text-align: center; }
+.support h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: .02em; }
+.support p { color: var(--muted); }
+.stack-cta { margin-top: 22px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- FAQ ---------- */
+.faq { max-width: 760px; margin: 0 auto; }
+.faq__item { border-top: 1px solid var(--line); }
+.faq__item:last-child { border-bottom: 1px solid var(--line); }
+.faq__item summary {
+  list-style: none; cursor: pointer; position: relative;
+  padding: 20px 44px 20px 0; color: var(--text); font-weight: 600; font-size: 1.06rem;
+}
+.faq__item summary::-webkit-details-marker { display: none; }
+.faq__item summary:hover { color: var(--blue-hi); }
+.faq__item summary::after {
+  content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
+  color: var(--red-hi); font-size: 1.5rem; font-weight: 400; line-height: 1;
+}
+.faq__item[open] summary::after { content: "\2212"; }
+.faq__item p { color: var(--muted); margin: 0 0 22px; max-width: 68ch; }
+
+/* ---------- Footer ---------- */
+.footer { border-top: 1px solid var(--line); background: var(--ink-2); }
+.footer__inner {
+  max-width: var(--wrap); margin: 0 auto; padding: 44px 24px;
+  display: flex; gap: 30px; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;
+}
+.footer__disclaimer { color: var(--muted); font-size: .86rem; max-width: 640px; margin: 0; }
+.footer__disclaimer strong { color: var(--text); font-weight: 700; }
+.footer__links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer__links a { color: var(--muted); font-size: .74rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 600; }
+.footer__links a:hover { color: var(--blue-hi); }
+
+/* ---------- Secondary page header ---------- */
+.page-head { text-align: center; padding: 60px 24px 4px; }
+.page-head h1 { font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: .02em; }
+.page-head p { color: var(--muted); max-width: 620px; margin: 16px auto 0; font-size: 1.05rem; }
+.legend { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; margin-top: 26px; color: var(--muted); font-size: .84rem; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+
+/* ---------- Comparison table (Plain Mixxx vs Tango Mode) ---------- */
+.compare { max-width: 880px; margin: 0 auto; }
+.compare table { width: 100%; border-collapse: collapse; }
+.compare col.col-tango-bg { background: rgba(111,155,255,.06); }
+.compare th, .compare td { padding: 13px 18px; text-align: left; vertical-align: middle; }
+.compare thead th {
+  font-family: "Inter", sans-serif; text-transform: uppercase; letter-spacing: .14em;
+  font-size: .72rem; color: var(--muted); font-weight: 600;
+  border-bottom: 1px solid var(--line);
+}
+.compare thead th.col-mark { text-align: center; width: 132px; }
+.compare thead th.col-tango { color: var(--blue-hi); }
+.cmp-cat th {
+  font-family: "Inter", sans-serif; text-transform: uppercase; letter-spacing: .2em;
+  font-size: .72rem; color: var(--blue); font-weight: 700;
+  padding-top: 30px; padding-bottom: 6px;
+}
+.cmp-row td { border-top: 1px solid rgba(151,161,196,.14); }
+.cmp-row td.feat { color: var(--text); }
+.cmp-row td.mark { text-align: center; }
+.mark--yes { color: var(--red); font-size: 1.3rem; line-height: 1; }
+.mark--no { color: rgba(151,161,196,.5); font-size: 1.05rem; line-height: 1; }
+.mark--basic {
+  color: var(--muted); font-size: .66rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .12em;
+  border: 1px solid var(--line); border-radius: 20px; padding: 3px 9px;
+}
+.compare-cta { text-align: center; margin-top: 46px; }
+
+/* Compact teaser variant on the landing page */
+.teaser { max-width: 620px; }
+.teaser td, .teaser th { padding: 11px 14px; }
+.teaser thead th.col-mark { width: 116px; }
+.teaser__foot { text-align: center; margin-top: 26px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Scroll reveal (progressive; content visible without JS) ---------- */
+html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+html.js .reveal.in { opacity: 1; transform: none; }
+
+/* ---------- Focus + reduced motion ---------- */
+:focus-visible { outline: 2px solid var(--blue-hi); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+  .btn:hover { transform: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 880px) {
+  .liner__row { grid-template-columns: 1fr; gap: 22px; padding: 40px 0; }
+  .liner__row:nth-child(even) .liner__media { order: 0; }
+  .split { grid-template-columns: 1fr; }
+  .dl-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .section { padding: 68px 20px; }
+  .nav__links { display: none; }
+  .hero__wordmark-main { gap: 12px; }
+  .hero__mark { width: 52px; height: 52px; }
+  .hero__cta { flex-direction: column; align-items: stretch; }
+  .hero__cta .btn { justify-content: center; }
+}

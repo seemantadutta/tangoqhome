@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tango Mode for Mixxx - an unofficial fork for milonga DJs</title>
+<meta name="description" content="An unofficial, GPL fork of Mixxx that turns Auto DJ into a tool for pre-arranged tango sets: keep-queue playback, automatic cortina fades, set length/end-time estimates, and live-performance safeguards. Not affiliated with the Mixxx project." />
+
+<!-- Open Graph / social preview. Replace og:url before sharing. -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Tango Mode for Mixxx" />
+<meta property="og:description" content="An unofficial, GPL fork of Mixxx built for milonga DJs - cortina fades, set timing, and gig safeguards for Auto DJ." />
+<meta property="og:image" content="assets/tangomodemixxx_hero_screenshot.png" />
+<!-- <meta property="og:url" content="https://YOUR-USER.github.io/tango-mode/" /> -->
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================ UNOFFICIAL-FORK BANNER ==================== -->
+<div class="fork-banner" role="note">
+  <span class="fork-banner__icon" aria-hidden="true">&#9888;</span>
+  <span>
+    <strong>Unofficial fork of <a href="https://github.com/mixxxdj/mixxx" target="_blank" rel="noopener">Mixxx</a>.</strong> Not affiliated with or endorsed by the Mixxx&nbsp;project.
+  </span>
+</div>
+
+<!-- ============================ NAV ===================================== -->
+<header class="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="Tango Mode for Mixxx - home">
+      <img class="brand__mark-svg" src="assets/seal.svg" alt="" aria-hidden="true" width="28" height="28" />
+      <span class="brand__name"><em>Tango</em>&nbsp;Mode <span class="brand__sub">for&nbsp;Mixxx</span></span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="features.html">Compare</a>
+      <a href="#download">Download</a>
+      <a href="#source">Source</a>
+      <a href="#build">Build</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<!-- ============================ HERO ==================================== -->
+<section class="hero">
+  <div class="hero__grooves" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <h1 class="hero__wordmark">
+      <span class="hero__wordmark-main">
+        <img class="hero__mark" src="assets/seal.svg" alt="" aria-hidden="true" width="76" height="76" />
+        <span class="hero__wordmark-word"><em>Tango</em> Mode</span>
+      </span>
+      <span class="hero__wordmark-sub">for Mixxx</span>
+    </h1>
+    <p class="hero__tagline">DJ your milonga using Mixxx, with <em>tango centered</em> features.</p>
+    <p class="hero__lede">
+      Play your set the way you planned it: the queue holds its order and keeps every
+      track so that you don&rsquo;t lose your bearings, cortinas can be made to fade on
+      their own, consistent gaps between tracks within a tanda, and you always know
+      when the milonga will end - with safeguards so a stray key can&rsquo;t kill the energy.
+    </p>
+    <div class="hero__cta">
+      <!-- TODO: point to your GitHub Releases page -->
+      <a class="btn btn--primary" href="#download">Download</a>
+      <!-- TODO: point to your YouTube tutorial/channel -->
+      <a class="btn btn--ghost" href="https://youtube.com/@YOUR_CHANNEL" target="_blank" rel="noopener">
+        <span class="btn__play" aria-hidden="true">&#9658;</span> Watch the tutorial
+      </a>
+    </div>
+    <p class="hero__meta">Free &amp; open source <b>&middot;</b> Windows &amp; macOS <b>&middot;</b> Built on Mixxx&nbsp;2.5.6</p>
+  </div>
+</section>
+
+<!-- ============================ HERO SCREENSHOT ======================== -->
+<section class="shot">
+  <figure class="shot__frame engraved reveal">
+    <figcaption class="shot__caption">
+      <span class="diamond" aria-hidden="true"></span> A typical milonga set, mid-session <span class="diamond" aria-hidden="true"></span>
+    </figcaption>
+    <img src="assets/tangomodemixxx_hero_screenshot.png"
+         alt="Mixxx running a tango set: the Auto DJ toolbar shows Set Length, projected end time, an over/under indicator, a live cortina-length control and the LIVE lock, with a queue of Di Sarli tandas and cortinas." />
+  </figure>
+</section>
+
+<!-- ============================ FEATURES (liner notes) ================= -->
+<section id="features" class="section liner">
+  <div class="section-head reveal">
+    <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+    <p class="eyebrow">Built for the milonga</p>
+    <h2>What Tango Mode adds</h2>
+    <p>Everything here lives behind a single <strong>Tango&nbsp;Mode</strong> switch. Turn it off and it&rsquo;s ordinary Mixxx.</p>
+  </div>
+
+  <div class="liner__rows">
+    <article class="liner__row reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3090" height="1254" muted loop playsinline preload="none"
+               poster="assets/videos/keep_queue.jpg"
+               aria-label="Demo: the Auto DJ queue keeps played tracks in order, with a cursor on the next track.">
+          <source src="assets/videos/keep_queue.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Set</p>
+        <h3>Your set, kept in order</h3>
+        <p>The Auto&nbsp;DJ list plays top to bottom and keeps every played track in place. A cursor marks where you are, so the tanda order you planned survives the night and the set stops cleanly at the end.</p>
+        <p class="liner__watch">Look for: played tracks stay in the list and grey out, while the play cursor marks the next track up.</p>
+      </div>
+    </article>
+
+    <article class="liner__row liner__row--wide reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3416" height="1342" muted loop playsinline preload="none"
+               poster="assets/videos/automatic_cortina_fade.jpg"
+               aria-label="Demo: a cortina automatically fading in and out, with the crossfader sweeping between decks.">
+          <source src="assets/videos/automatic_cortina_fade.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Cortina</p>
+        <h3>Cortinas fade themselves</h3>
+        <p>Mark a track as a cortina and the engine fades it up, holds, fades it down, and leaves a clean silence on each side - no more reaching for the crossfader to clear the floor between tandas.</p>
+        <p class="liner__watch">Look for: Setting the Cortina parameters in preferences (or the toolbar), then observing the cross fader automatically fading the cortina.</p>
+      </div>
+    </article>
+
+    <article class="liner__row liner__row--wide reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3102" height="1254" muted loop playsinline preload="none"
+               poster="assets/videos/set_length_and_time.jpg"
+               aria-label="Demo: the set length, projected end time and time-left readout updating during a set.">
+          <source src="assets/videos/set_length_and_time.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Clock</p>
+        <h3>Know when the night ends</h3>
+        <p>See the set&rsquo;s total length, its projected end time, and the time left at a glance - with an over/under against your target so you can land the milonga right on the hour.</p>
+        <p class="liner__watch">Look for: the projected end time and time-left readout updating as the set plays.</p>
+      </div>
+    </article>
+
+    <article class="liner__row liner__row--wide reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3102" height="1248" muted loop playsinline preload="none"
+               poster="assets/videos/live_mode_lock.jpg"
+               aria-label="Demo: LIVE mode's two-step confirm countdown guarding the Auto DJ stop control.">
+          <source src="assets/videos/live_mode_lock.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Floor</p>
+        <h3>Guard the floor</h3>
+        <p>Arm LIVE mode and a bumped keyboard can&rsquo;t stop the music: disabling Auto&nbsp;DJ takes a deliberate two-step confirm, and the deck play/pause keys go quiet for the night.</p>
+        <p class="liner__watch">Look for: the red countdown draining over the Auto&nbsp;DJ button when a stop is attempted.</p>
+      </div>
+    </article>
+
+    <article class="liner__row reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3102" height="1246" muted loop playsinline preload="none"
+               poster="assets/videos/always_visible_queue.jpg"
+               aria-label="Demo: the Auto DJ queue floating into a dockable panel beside the library.">
+          <source src="assets/videos/always_visible_queue.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Queue</p>
+        <h3>The queue, always in view</h3>
+        <p>Float the Auto&nbsp;DJ queue into a docked, themed panel that stays put while you dig through your library for the next tanda.</p>
+        <p class="liner__watch">Look for: the queue panel staying docked and live while the library view changes behind it.</p>
+      </div>
+    </article>
+
+    <article class="liner__row liner__row--wide reveal">
+      <div class="liner__media">
+        <video class="liner__video" width="3102" height="1246" muted loop playsinline preload="none"
+               poster="assets/videos/live_cortina_nudge.jpg"
+               aria-label="Demo: nudging the cortina length live from the toolbar.">
+          <source src="assets/videos/live_cortina_nudge.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="liner__text">
+        <p class="liner__no">The Booth</p>
+        <h3>Tune the room live</h3>
+        <p>Nudge cortina length from the toolbar as the night finds its mood, or mark a set unplayed to run it again from the top - the controls you reach for mid-milonga are right where you need them.</p>
+        <p class="liner__watch">Look for: the cortina length changing straight from the toolbar, without pausing the set.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================ COMPARE TEASER ======================== -->
+<section class="section">
+  <div class="section-head reveal">
+    <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+    <p class="eyebrow">Plain Mixxx vs Tango Mode</p>
+    <h2>A different night at the decks</h2>
+  </div>
+  <div class="compare teaser reveal">
+    <table>
+      <caption class="sr-only">A few highlights: plain Mixxx versus Tango Mode</caption>
+      <colgroup><col /><col /><col class="col-tango-bg" /></colgroup>
+      <thead>
+        <tr>
+          <th scope="col">&nbsp;</th>
+          <th scope="col" class="col-mark">Plain&nbsp;Mixxx</th>
+          <th scope="col" class="col-mark col-tango">Tango&nbsp;Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="cmp-row"><td class="feat">Keeps your set in order, played tracks and all</td><td class="mark"><span class="mark--no" aria-label="No">&#10007;</span></td><td class="mark"><span class="mark--yes" aria-label="Yes">&#10003;</span></td></tr>
+        <tr class="cmp-row"><td class="feat">Cortinas fade in and out on their own</td><td class="mark"><span class="mark--no" aria-label="No">&#10007;</span></td><td class="mark"><span class="mark--yes" aria-label="Yes">&#10003;</span></td></tr>
+        <tr class="cmp-row"><td class="feat">Know exactly when the milonga ends</td><td class="mark"><span class="mark--no" aria-label="No">&#10007;</span></td><td class="mark"><span class="mark--yes" aria-label="Yes">&#10003;</span></td></tr>
+        <tr class="cmp-row"><td class="feat">Guards against accidentally stopping the music</td><td class="mark"><span class="mark--no" aria-label="No">&#10007;</span></td><td class="mark"><span class="mark--yes" aria-label="Yes">&#10003;</span></td></tr>
+        <tr class="cmp-row"><td class="feat">Always-visible, dockable queue</td><td class="mark"><span class="mark--no" aria-label="No">&#10007;</span></td><td class="mark"><span class="mark--yes" aria-label="Yes">&#10003;</span></td></tr>
+      </tbody>
+    </table>
+    <div class="teaser__foot">
+      <a class="btn btn--ghost" href="features.html">See the full comparison &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ DOWNLOAD =============================== -->
+<section id="download" class="section download">
+  <div class="section-head reveal">
+    <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+    <p class="eyebrow">Take it home</p>
+    <h2>Download</h2>
+    <p>These builds aren&rsquo;t code-signed, so your OS will warn you the first time. That&rsquo;s
+       expected for an independent fork - here&rsquo;s how to open it anyway.</p>
+  </div>
+
+  <div class="dl-grid">
+    <article class="dl-card engraved reveal">
+      <h3><span class="dl-card__os">Windows</span> installer</h3>
+      <!-- TODO: link the .msi from your GitHub Release -->
+      <a class="btn btn--primary btn--block" href="https://github.com/seemantadutta/mixxx/releases" target="_blank" rel="noopener">Download .msi</a>
+      <p class="dl-card__hash"><code>SHA-256</code> &nbsp;paste checksum here</p>
+      <details class="callout" open>
+        <summary>Seeing &ldquo;Windows protected your PC&rdquo;?</summary>
+        <ol>
+          <li>Run the installer.</li>
+          <li>On the blue SmartScreen dialog, click <strong>More info</strong>.</li>
+          <li>Click <strong>Run anyway</strong>.</li>
+        </ol>
+        <p class="muted">This appears because the build isn&rsquo;t signed, not because anything is wrong with it.</p>
+      </details>
+    </article>
+
+    <article class="dl-card engraved reveal">
+      <h3><span class="dl-card__os">macOS</span> installer</h3>
+      <!-- TODO: link the .dmg from your GitHub Release -->
+      <a class="btn btn--primary btn--block" href="https://github.com/seemantadutta/mixxx/releases" target="_blank" rel="noopener">Download .dmg</a>
+      <p class="dl-card__hash"><code>SHA-256</code> &nbsp;paste checksum here</p>
+      <details class="callout" open>
+        <summary>Gatekeeper blocking it (&ldquo;unidentified developer&rdquo; / &ldquo;damaged&rdquo;)?</summary>
+        <ol>
+          <li>Drag Mixxx to <strong>Applications</strong>, then try to open it once (it&rsquo;ll be blocked).</li>
+          <li>Open <strong>System Settings &rarr; Privacy &amp; Security</strong>, scroll down, click <strong>Open Anyway</strong>.</li>
+          <li>If it says the app is <em>&ldquo;damaged&rdquo;</em>, open <strong>Terminal</strong> and run:<br />
+            <code>xattr -dr com.apple.quarantine /Applications/Mixxx.app</code></li>
+        </ol>
+        <p class="muted">Steps vary a little by macOS version. Proper notarization needs a paid Apple Developer account this fork doesn&rsquo;t have.</p>
+      </details>
+    </article>
+  </div>
+
+  <p class="dl-trust">
+    Rather not run an unsigned build? Completely fair -
+    <a href="#source">read the source</a> or <a href="#build">build it yourself</a> instead.
+  </p>
+</section>
+
+<!-- ============================ SOURCE ================================= -->
+<section id="source" class="section">
+  <div class="split">
+    <div class="split__text reveal">
+      <p class="eyebrow">Open by design</p>
+      <h2>See exactly what changed</h2>
+      <p>Tango&nbsp;Mode is a fork of Mixxx under the GPL. The full modified source is public,
+         and you can read every change against upstream Mixxx, line by line.</p>
+      <div class="split__cta">
+        <!-- TODO: confirm your fork URL / default branch -->
+        <a class="btn btn--primary" href="https://github.com/seemantadutta/mixxx" target="_blank" rel="noopener">View the code</a>
+        <!-- TODO: set the compare URL to your branch -->
+        <a class="btn btn--ghost" href="https://github.com/mixxxdj/mixxx/compare/2.5...seemantadutta:mixxx:main" target="_blank" rel="noopener">Compare with upstream</a>
+      </div>
+    </div>
+    <aside class="split__aside engraved reveal">
+      <p><strong>On the record.</strong> Built on Mixxx&nbsp;2.5.6. Licensed GPL, with the
+         license and copyright notices intact. Not affiliated with, endorsed by, or
+         supported by the Mixxx project.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============================ BUILD ================================== -->
+<section id="build" class="section center">
+  <div class="section-head reveal">
+    <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+    <p class="eyebrow">For tinkerers</p>
+    <h2>Build it yourself</h2>
+    <p>Prefer to compile from source? A step-by-step Windows build guide is in the repo.
+       macOS and Linux notes to follow.</p>
+  </div>
+  <!-- TODO: confirm the path to your build guide -->
+  <a class="btn btn--primary" href="https://github.com/seemantadutta/mixxx/blob/main/INSTALL.md" target="_blank" rel="noopener">Windows build guide</a>
+</section>
+
+<!-- ============================ FAQ =================================== -->
+<section id="faq" class="section">
+  <div class="section-head reveal">
+    <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+    <p class="eyebrow">Questions</p>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq reveal">
+    <details class="faq__item">
+      <summary>Is this the official Mixxx?</summary>
+      <p>No. Tango&nbsp;Mode is an independent, unofficial fork of Mixxx - not affiliated with or endorsed by the Mixxx project. It is built on Mixxx and released under the same GPL license; the official app lives at <a href="https://mixxx.org" target="_blank" rel="noopener">mixxx.org</a>.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Why not just use another DJ app like djay Pro, Traktor or VirtualDJ?</summary>
+      <p>You can, and you probably already do. But those apps are built for club DJs who beat-match and blend one track into the next for a dancefloor crowd. None of them understand a cortina, or that at a milonga every track stands on its own with no blending between them. Tango&nbsp;Mode adds exactly that missing, tango-specific handling.</p>
+    </details>
+    <details class="faq__item">
+      <summary>What tango-specific features does it actually add?</summary>
+      <p>It began with one wish: to stop tracks from vanishing out of the Auto&nbsp;DJ queue as they play. That snowballed into a set of related tools: cortina fading, a LIVE performance lock, tagging any track as a cortina, set-length and end-time estimates, and more. <a href="features.html">See the full list</a>.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Does it change normal Mixxx? Do I lose anything?</summary>
+      <p>No. Every Tango feature lives behind a single &ldquo;Enable Tango DJ mode&rdquo; switch in Preferences. With it off, the app behaves exactly like standard Mixxx, so you give up nothing by using this build.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Will my existing library, tracks and controllers work?</summary>
+      <p>Yes. It is Mixxx under the hood (version 2.5.6), so your music library, track analysis, controller mappings and settings all work just as they do in the official build.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Why does my computer warn me about the installer? Is it safe?</summary>
+      <p>Because these builds are not code-signed (that needs a paid developer certificate this project does not have), Windows SmartScreen and macOS Gatekeeper flag them as coming from an unknown developer. It is not malware: the full source is public and you can build it yourself. The <a href="#download">Download</a> section has the exact click-through steps.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Which platforms does it run on?</summary>
+      <p>Windows and macOS. Linux users can build from source for now; packaged Linux builds may follow.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Is it free?</summary>
+      <p>Yes, free and open source under the GNU GPL. If it earns a place in your booth you are welcome to chip in via the donate link, but that is entirely optional.</p>
+    </details>
+    <details class="faq__item">
+      <summary>Will these features come to official Mixxx?</summary>
+      <p>Maybe. This is a fork built for one specific tango workflow; some pieces might make sense upstream as optional settings, and that conversation is open with the Mixxx project. For now, this fork is where they live.</p>
+    </details>
+    <details class="faq__item">
+      <summary>How do I report a bug or suggest a feature?</summary>
+      <p>Open an issue on the fork&rsquo;s GitHub via the <a href="https://github.com/seemantadutta/mixxx/issues" target="_blank" rel="noopener">Report a bug</a> link. Reports that include your OS and the steps to reproduce are the most helpful.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============================ SUPPORT =============================== -->
+<section class="section support reveal">
+  <div class="divider"><span class="diamond" aria-hidden="true"></span></div>
+  <h2>Support the project</h2>
+  <p>Tango&nbsp;Mode is free for the tango community and always will be. If it earns its
+     place in your booth and you&rsquo;d like to chip in, it&rsquo;s appreciated - and entirely optional.</p>
+  <div class="stack-cta">
+    <!-- TODO: your PayPal.me handle -->
+    <a class="btn btn--ghost" href="https://paypal.me/YOUR_HANDLE" target="_blank" rel="noopener">Donate via PayPal</a>
+  </div>
+</section>
+</main>
+
+<!-- ============================ FOOTER ================================ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <p class="footer__disclaimer">
+      <strong>Tango&nbsp;Mode for Mixxx</strong> is an independent, unofficial fork of
+      <a href="https://mixxx.org" target="_blank" rel="noopener">Mixxx</a>. It is
+      <strong>not affiliated with, endorsed by, or supported by</strong> the Mixxx project.
+      &ldquo;Mixxx&rdquo; and the Mixxx logo belong to their respective owners. Distributed under
+      the <a href="https://github.com/seemantadutta/mixxx/blob/main/LICENSE" target="_blank" rel="noopener">GNU&nbsp;GPL</a>.
+    </p>
+    <nav class="footer__links" aria-label="Footer">
+      <a href="https://mixxx.org" target="_blank" rel="noopener">Official Mixxx</a>
+      <a href="https://github.com/seemantadutta/mixxx" target="_blank" rel="noopener">Source</a>
+      <a href="https://github.com/seemantadutta/mixxx/issues" target="_blank" rel="noopener">Report a bug</a>
+      <a href="#download">Download</a>
+      <a href="#build">Build</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Progressive scroll reveal - content is fully visible without JS.
+  document.documentElement.classList.add('js');
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Feature clips: autoplay only on larger screens, and only while on screen.
+  // On phones (or with reduced motion) we leave the poster and never call play(),
+  // so with preload="none" the video file is never downloaded - mobile visitors
+  // don't burn data on detail that's too small to read anyway.
+  const canAutoplay = !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    && !window.matchMedia('(max-width: 620px)').matches;
+  if (canAutoplay) {
+    const vio = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) { e.target.play().catch(() => {}); }
+        else { e.target.pause(); }
+      }
+    }, { threshold: 0.35 });
+    document.querySelectorAll('.liner__video').forEach((v) => vio.observe(v));
+  }
+</script>
+</body>
+</html>
