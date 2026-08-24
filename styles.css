@@ -117,8 +117,14 @@ code {
 .btn--ghost { border-color: var(--line); color: var(--blue-hi); }
 .btn--ghost:hover { border-color: var(--blue); color: var(--blue-hi); background: rgba(111,155,255,.08); }
 .btn--block { display: flex; width: 100%; justify-content: center; }
+.btn--lg { padding: 15px 30px; font-size: 1.06rem; }
 .btn__play { font-size: .82em; color: var(--red); }
 .btn--primary .btn__play { color: var(--on-red); }
+
+/* ---------- Early access ---------- */
+.early-cta { text-align: center; margin: 6px auto 8px; }
+.early-cta .muted { margin: 16px auto 0; max-width: 520px; font-size: .92rem; }
+.installers-disabled { display: none; }
 
 /* ---------- Fork banner ---------- */
 .fork-banner {
@@ -149,6 +155,7 @@ code {
   font-size: 1.5rem; line-height: 1; color: var(--text);
 }
 .brand__name em { font-style: italic; color: var(--red-hi); }
+.brand__q { color: var(--red-hi); font-style: italic; }
 .brand__sub { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600; font-size: .95rem; color: var(--muted); }
 .nav__links { display: flex; gap: 30px; }
 .nav__links a {
@@ -171,33 +178,31 @@ code {
 }
 .hero__inner { position: relative; max-width: 780px; margin: 0 auto; }
 
-.hero__wordmark { display: inline-block; text-align: left; margin: 0 0 20px; line-height: 1; }
-.hero__wordmark-main {
-  display: flex; align-items: center; gap: 20px;
-  font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700;
-  font-size: clamp(3.2rem, 10vw, 6rem); line-height: 1; color: var(--text);
-  letter-spacing: .005em;
-  /* Room below the caps so the "g" descender clears the "for Mixxx" sub-line. */
-  padding-bottom: 0.2em;
+/* Brand lockup: the squircle mark + "TangoQ" wordmark, sitting above the headline. */
+.hero__brand {
+  display: inline-flex; align-items: center; gap: 14px; margin: 0 0 22px;
+  text-decoration: none;
 }
-/* Plain vertical centring on the caps line, same as the nav mark. */
-.hero__mark { width: 76px; height: 76px; flex: none; }
-.hero__wordmark-main em { font-style: italic; color: var(--red-hi); }
-/* Sub-line centred under the wordmark line, so "for Mixxx" sits under the middle
-   of "Tango" (its "f" under the "g"). The padding-bottom on .hero__wordmark-main
-   keeps the "g" descender clear of it, so no overlap. */
-.hero__wordmark-sub {
-  display: block; text-align: center; margin-top: 2px;
-  font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600;
-  font-size: clamp(1.5rem, 3.6vw, 2.3rem); color: var(--muted); letter-spacing: .02em;
+.hero__mark { width: 64px; height: 64px; flex: none; }
+.hero__brand-word {
+  font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700;
+  font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1; color: var(--text);
+  letter-spacing: .01em;
+}
+.hero__brand-q { color: var(--red-hi); font-style: italic; }
+
+/* The headline is the star of the hero. */
+.hero__headline {
+  font-family: "Playfair Display", Georgia, serif; font-weight: 800;
+  font-size: clamp(2.4rem, 6.4vw, 4.2rem);
+  letter-spacing: .005em; line-height: 1.08; margin: 0 0 .34em; color: var(--text);
 }
 
 .hero__tagline {
-  font-family: "Playfair Display", Georgia, serif; font-weight: 700;
-  font-size: clamp(1.9rem, 5vw, 3.2rem);
-  letter-spacing: .01em; line-height: 1.14; margin: 0 0 .5em; color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-weight: 600;
+  font-size: clamp(1.2rem, 3vw, 1.7rem); color: var(--muted);
+  letter-spacing: .01em; line-height: 1.3; margin: 0 auto .9em; max-width: 620px;
 }
-.hero__tagline em { color: var(--red-hi); font-style: italic; }
 .hero__lede { font-size: 1.16rem; color: var(--muted); max-width: 600px; margin: 0 auto 32px; }
 .hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .hero__meta {
@@ -373,8 +378,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
   body { font-size: 16px; }
   .section { padding: 68px 20px; }
   .nav__links { display: none; }
-  .hero__wordmark-main { gap: 12px; }
-  .hero__mark { width: 52px; height: 52px; }
+  .hero__brand { gap: 12px; }
+  .hero__mark { width: 48px; height: 48px; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .btn { justify-content: center; }
 }
