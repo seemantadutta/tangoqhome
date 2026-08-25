@@ -11,7 +11,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="TangoQ - DJ the room, not the playlist" />
 <meta property="og:description" content="A tango-first DJ app built on Mixxx for milonga DJs - a cursor queue, cortina fades, set timing, and gig safeguards." />
-<meta property="og:image" content="https://tangoq.app/assets/tangomodemixxx_hero_screenshot.png" />
+<meta property="og:image" content="https://tangoq.app/assets/tangoq-hero.png" />
 <meta property="og:url" content="https://tangoq.app/" />
 
 <link rel="icon" type="image/svg+xml" href="assets/tangoq_icon.svg" />
@@ -108,12 +108,12 @@
     background: var(--surface); border:1px solid var(--line); border-left: 3px solid var(--gold);
     font-size: .96rem; }.guide .note .tag{ font-family:var(--f-mono); font-size:.64rem; letter-spacing:.1em; text-transform:uppercase; font-weight:600;
     align-self:start; padding:4px 8px; border-radius:5px; white-space:nowrap;
-    background: color-mix(in srgb, var(--gold) 16%, transparent); color: var(--gold); }.guide .note p{ margin:0; }.guide .note p + p{ margin-top:.6em; }.guide .note.live{ border-left-color: var(--accent); }.guide .note.live .tag{ background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }.guide .note.once{ border-left-color: var(--good); }.guide .note.once .tag{ background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }.guide figure.shot{ margin: 1.8em 0; max-width: var(--measure); }.guide .shot__slot{
+    background: color-mix(in srgb, var(--gold) 16%, transparent); color: var(--gold); }.guide .note p{ margin:0; }.guide .note p + p{ margin-top:.6em; }.guide .note.live{ border-left-color: var(--accent); }.guide .note.live .tag{ background: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--accent); }.guide .note.once{ border-left-color: var(--good); }.guide .note.once .tag{ background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }.guide figure.shot{ margin: 1.8em 0; max-width: var(--measure); padding:0; }.guide figure.shot img{ display:block; width:100%; height:auto; border:1px solid var(--line); border-radius:10px; box-shadow: var(--shadow-sm); }.guide figure.shot img + img{ margin-top:14px; }.guide .shot__slot{
     border: 1.5px dashed var(--line); border-radius: var(--radius);
     background: repeating-linear-gradient(45deg, var(--surface), var(--surface) 12px, var(--surface-2) 12px, var(--surface-2) 24px);
     aspect-ratio: 16 / 8; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
     color: var(--faint); text-align:center; padding: 20px;
-  }.guide .shot__slot .cam{ font-size: 1.7rem; opacity:.7; }.guide .shot__slot .num{ font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; color: var(--muted); }.guide .shot__slot .file{ font-family:var(--f-mono); font-size:.74rem; color: var(--accent); }.guide figure.shot figcaption{ font-size:.86rem; color: var(--muted); margin-top: 10px; padding-left: 2px; }.guide figure.shot figcaption b{ color: var(--ink); font-weight:600; }.guide .device{ max-width: var(--measure); margin: 1.6em 0; }.guide .device .cap{ font-size:.82rem; color:var(--faint); font-family:var(--f-mono); letter-spacing:.05em; margin-top:8px; }.guide .cockpit{
+  }.guide .shot__slot .cam{ font-size: 1.7rem; opacity:.7; }.guide .shot__slot .num{ font-family:var(--f-mono); font-size:.72rem; letter-spacing:.1em; color: var(--muted); }.guide .shot__slot .file{ font-family:var(--f-mono); font-size:.74rem; color: var(--accent); }.guide figure.shot figcaption{ font-size:.86rem; color: var(--muted); margin-top: 10px; padding-left: 2px; text-align:left; }.guide figure.shot figcaption b{ color: var(--ink); font-weight:600; }.guide .device{ max-width: var(--measure); margin: 1.6em 0; }.guide .device .cap{ font-size:.82rem; color:var(--faint); font-family:var(--f-mono); letter-spacing:.05em; margin-top:8px; }.guide .cockpit{
     background: #151517; border:1px solid #050505; border-radius: 8px;
     box-shadow: var(--shadow); padding: 12px 14px; overflow-x:auto;
     display:flex; align-items:center; gap: 8px; white-space:nowrap;
@@ -121,7 +121,7 @@
   }.guide .cockpit .rd{ display:inline-flex; gap:6px; align-items:baseline; }.guide .cockpit .k{ color:#8d8073; }.guide .cockpit .red{ color:#ee4444; font-weight:600; }.guide .cockpit .grn{ color:#55aa55; font-weight:600; }.guide .cockpit .box{ border:1px solid #3a3a3d; border-radius:5px; padding:2px 7px; color:#cdb4a4; }.guide .cockpit .sep{ width:8px; display:inline-block; }.guide .cockpit .nudge{ border:1px solid #3a3a3d; border-radius:5px; padding:1px 8px; color:#a7998b; }.guide .cockpit .live{ color:#ee2222; font-weight:700; letter-spacing:.06em; }.guide .hud{
     background: var(--hud-bg); border-radius: 10px; box-shadow: var(--shadow);
     padding: 26px; display:flex; flex-direction:column; align-items:center; gap:14px;
-  }.guide .hud .count{ font-family:var(--f-mono); font-weight:500; font-size: clamp(3rem,10vw,4.4rem); line-height:1; color: var(--hud-ink); letter-spacing:2px; }.guide .hud .count.breathe{ color:#ff5b5b; }.guide .hud .label{ font-family:var(--f-mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:#8d8073; }.guide .hud .pips{ display:flex; gap:8px; margin-top:2px; }.guide .hud .pip{ width:26px; height:6px; border-radius:3px; background:#3a352f; }.guide .hud .pip.on{ background:#c7b299; }.guide .hud .pip.now{ background:#ee4444; }.guide .legend{ max-width: var(--measure); margin: 1.4em 0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }.guide .legend .row{ display:grid; grid-template-columns: 92px 1fr; gap: 16px; padding: 12px 16px; align-items:baseline; }.guide .legend .row + .row{ border-top:1px solid var(--line-soft); }.guide .legend .sym{ font-family:var(--f-mono); font-weight:600; font-size:1rem; color: var(--accent); }.guide .legend .row.g .sym{ color: var(--good); }.guide .legend .row.o .sym{ color: var(--over); }.guide .legend .desc{ font-size:.95rem; color: var(--muted); }.guide .legend .desc b{ color: var(--ink); font-weight:600; }.guide .cards{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; max-width: var(--measure); margin: 1.4em 0; }.guide .card{ background: var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding: 18px 20px; box-shadow: var(--shadow-sm); }.guide .card h4{ margin:0 0 8px; font-family:var(--f-display); font-weight:600; font-size:1.1rem; }.guide .card p{ margin:0; font-size:.94rem; color: var(--muted); }.guide .card .lbl{ font-family:var(--f-mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:6px; }.guide ol.steps{ list-style:none; counter-reset: s; padding:0; max-width: var(--measure); margin: 1.4em 0; }.guide ol.steps li{ counter-increment:s; position:relative; padding: 4px 0 18px 52px; }.guide ol.steps li::before{ content: counter(s); position:absolute; left:0; top:0;
+  }.guide .hud .count{ font-family:var(--f-mono); font-weight:500; font-size: clamp(3rem,10vw,4.4rem); line-height:1; color: var(--hud-ink); letter-spacing:2px; }.guide .hud .count.breathe{ color:#ff5b5b; }.guide .hud .label{ font-family:var(--f-mono); font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:#8d8073; }.guide .hud .pips{ display:flex; gap:8px; margin-top:2px; }.guide .hud .pip{ width:26px; height:6px; border-radius:3px; background:#3a352f; }.guide .hud .pip.on{ background:#c7b299; }.guide .hud .pip.now{ background:#ee4444; }.guide .legend{ max-width: var(--measure); margin: 1.4em 0; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:var(--surface); }.guide .legend .row{ display:grid; grid-template-columns: 84px 128px 1fr; gap: 14px; padding: 12px 16px; align-items:baseline; }.guide .legend .row + .row{ border-top:1px solid var(--line-soft); }.guide .legend .sym{ font-family:var(--f-mono); font-weight:600; font-size:1rem; color: var(--accent); }.guide .legend .row.g .sym{ color: var(--good); }.guide .legend .row.o .sym{ color: var(--over); }.guide .legend .lbl{ font-weight:600; color: var(--ink); font-size:.95rem; }.guide .legend .desc{ font-size:.95rem; color: var(--muted); }.guide .legend .desc b{ color: var(--ink); font-weight:600; }.guide .cards{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:16px; max-width: var(--measure); margin: 1.4em 0; }.guide .card{ background: var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding: 18px 20px; box-shadow: var(--shadow-sm); }.guide .card h4{ margin:0 0 8px; font-family:var(--f-display); font-weight:600; font-size:1.1rem; }.guide .card p{ margin:0; font-size:.94rem; color: var(--muted); }.guide .card .lbl{ font-family:var(--f-mono); font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:6px; }.guide ol.steps{ list-style:none; counter-reset: s; padding:0; max-width: var(--measure); margin: 1.4em 0; }.guide ol.steps li{ counter-increment:s; position:relative; padding: 4px 0 18px 52px; }.guide ol.steps li::before{ content: counter(s); position:absolute; left:0; top:0;
     width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
     font-family:var(--f-display); font-weight:600; font-size:1rem; color:#fff; background: var(--accent); }.guide ol.steps li::after{ content:""; position:absolute; left:16.5px; top:34px; bottom:2px; width:1.5px; background: var(--line); }.guide ol.steps li:last-child::after{ display:none; }.guide ol.steps li b{ color: var(--ink); }.guide ol.steps li p{ margin:.2em 0 0; color: var(--muted); font-size:.95rem; }.guide dl.glossary{ max-width: var(--measure); margin: 1em 0; }.guide dl.glossary div{ padding: 12px 0; border-top:1px solid var(--line-soft); display:grid; grid-template-columns: 150px 1fr; gap: 20px; }.guide dl.glossary div:first-child{ border-top:0; }.guide dl.glossary dt{ font-family:var(--f-display); font-weight:600; font-size:1.02rem; }.guide dl.glossary dd{ margin:0; color: var(--muted); font-size:.95rem; }
   @media (max-width:600px){.guide dl.glossary div{ grid-template-columns:1fr; gap:2px; } }.guide footer{ border-top:1px solid var(--line); margin-top: 20px; padding: 40px 0 60px; }.guide footer .prose{ color: var(--muted); font-size:.9rem; }.guide footer .brand{ margin-bottom: 14px; }.guide hr.rule{ border:0; border-top:1px solid var(--line-soft); margin: 2em 0; max-width: var(--measure); }
@@ -188,7 +188,7 @@
     <figcaption class="shot__caption">
       <span class="diamond" aria-hidden="true"></span> A typical milonga set, mid-session <span class="diamond" aria-hidden="true"></span>
     </figcaption>
-    <img src="assets/tangomodemixxx_hero_screenshot.png"
+    <img src="assets/tangoq-hero.png"
          alt="TangoQ running a tango set: the Auto DJ toolbar shows Set Length, projected end time, an over/under indicator, a live cortina-length control and the LIVE lock, with a queue of Di Sarli tandas and cortinas." />
   </figure>
 </section>
@@ -612,7 +612,7 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 05</span><span class="file">05-main-window.png</span></div>
+          <img src="assets/05-main-window.png" alt="The TangoQ main window in the Default skin: two decks with waveforms, the Auto DJ queue of tandas and cortinas, and the timing cockpit across the toolbar." />
           <figcaption><b>The TangoQ window</b> in the TangoQ / Default skin, decks, the Auto DJ queue, and the timing cockpit across the toolbar.</figcaption>
         </figure>
       </section>
@@ -762,8 +762,9 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 01</span><span class="file">01-gatekeeper.png</span></div>
-          <figcaption><b>First-launch on macOS</b>: the Gatekeeper prompt and the right-click → Open route.</figcaption>
+          <img src="assets/01-gatekeeper.png" alt="macOS Gatekeeper dialog reading 'TangoQ Not Opened — Apple could not verify TangoQ is free of malware', with Move to Trash and Done buttons." />
+          <img src="assets/01b-openanyway.png" alt="System Settings → Privacy & Security showing 'TangoQ was blocked to protect your Mac' with an Open Anyway button." />
+          <figcaption><b>First-launch on macOS</b>: because the build is not yet notarized, macOS blocks it once (top). Click <b>Done</b>, then go to <b>System Settings → Privacy &amp; Security</b>, scroll to <i>"TangoQ was blocked…"</i> and click <b>Open Anyway</b> (bottom), authenticate, then confirm. You only do this once. <i>(On macOS 15 and later the old right-click → Open shortcut no longer works.)</i></figcaption>
         </figure>
       </section>
 
@@ -803,8 +804,13 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 02</span><span class="file">02-import-dialog.png</span></div>
+          <img src="assets/02-import-dialog.png" alt="TangoQ's 'Import your Mixxx library?' dialog, showing the source Mixxx database path, the destination TangoQ path, and Start Fresh / Import Library buttons." />
           <figcaption>The <b>"Import your Mixxx library?"</b> dialog, showing the source and destination paths and the Import / Start Fresh buttons.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/03-music-prompt.png" alt="TangoQ first-run prompt reading 'TangoQ needs to know where you keep your music', explaining that after clicking OK you choose the folder that holds your music files." />
+          <img src="assets/04-choose-folder.png" alt="macOS folder picker open at the user's Music folder, choosing which folder TangoQ should scan for tracks." />
+          <figcaption><b>Starting fresh</b>: if you choose <b>Start Fresh</b> (or have no existing Mixxx library), TangoQ asks where your music lives (top), then opens a folder picker so you can point it at your music folder (bottom). It scans that folder and builds your library; add more folders later in <span class="ui">Preferences → Library</span>.</figcaption>
         </figure>
       </section>
 
@@ -857,7 +863,7 @@
           <p>Select the tracks of a tanda and use <span class="ui">Make Tango tanda</span>, <span class="ui">Make Vals tanda</span>, or <span class="ui">Make Milonga tanda</span> to group them. Grouping drives the tanda progress pips in the HUD so you can see how far through the current tanda you are at a glance.</p>
 
           <h3>Cortinas</h3>
-          <p>Tag any track as a cortina with <span class="ui">Add to Auto DJ Queue as Cortina</span> (or tag one directly from the deck area). A tagged cortina gets a blue <span class="ui">[--CORTINA--]</span> prefix in the list and feeds the set-length and end-time projection using your preferred cortina length. Cortinas are exempt from duplicate detection, you're meant to reuse the same one across the night.</p>
+          <p>Tag a track already in the queue as a cortina with <span class="ui">Set as Cortina</span> (from the library, the same action is <span class="ui">Add to Auto DJ Queue as Cortina</span>). A tagged cortina gets a blue <span class="ui">[-- CORTINA --]</span> prefix in the list and feeds the set-length and end-time projection using your preferred cortina length. Cortinas are exempt from duplicate detection, you're meant to reuse the same one across the night.</p>
 
           <h3>Performances, pauses &amp; where the set ends</h3>
           <p>Any track can carry a session display name and a pause-after mark, which together cover announcements, performance tracks and intro/outro blocks, a performance is a track you rename and mark; an intro block is one you put a mark after. A <strong>red separator line</strong> in the list shows exactly where the set will stop.</p>
@@ -868,12 +874,14 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 06</span><span class="file">06-queue-cortina.png</span></div>
-          <figcaption>The Auto DJ queue with a tagged <b>[--CORTINA--]</b> and the now-playing track in red.</figcaption>
+          <img src="assets/06-queue-cortina.png" alt="The TangoQ Auto DJ queue: grouped tandas with T/V type badges, blue [-- CORTINA --] rows between them, and the now-playing track in red." />
+          <figcaption>The Auto DJ queue with a tagged <b>[-- CORTINA --]</b> and the now-playing track in red.</figcaption>
         </figure>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 07 · 08</span><span class="file">07-context-menu.png · 08-tanda-separator.png</span></div>
-          <figcaption>The <b>Add as Cortina / Make Tanda</b> context menu, and a grouped tanda with the red "set stops here" separator.</figcaption>
+          <img src="assets/07-context-menu.png" alt="Right-click menu on a multi-track selection: Make Tango tanda, Make Vals tanda, Make Milonga tanda, Make Nuevo / Alternative tanda." />
+          <img src="assets/07b-set-as-cortina.png" alt="Right-click menu on a single track showing the TangoQ actions: Set as Cortina, Set as Performance Track, Pause after this track, Set display name, Set DJ start." />
+          <img src="assets/08-tanda-separator.png" alt="The Auto DJ queue with a track marked [-- PAUSE AFTER --] and a red separator line beneath it, where the set stops for an announcement." />
+          <figcaption>Grouping and marking tracks in the queue: the <b>Make Tanda</b> menu on a selection (top), the single-track menu with <b>Set as Cortina</b>, <b>Pause after this track</b> and the start-point actions (middle), and a track marked <b>Pause after</b> — the red line shows where the set stops for an announcement (bottom).</figcaption>
         </figure>
       </section>
 
@@ -901,7 +909,8 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 10 · 11</span><span class="file">10-set-start.png · 11-fas-las.png</span></div>
+          <img src="assets/10-set-start.png" alt="A TangoQ deck showing the Set Start and Reset buttons with a custom start marker placed on the waveform." />
+          <img src="assets/11-fas-las.png" alt="A TangoQ waveform annotated with FAS (First Audible Sound) and LAS (Last Audible Sound) markers and a custom start point." />
           <figcaption>The <b>Set Start / Reset</b> buttons with the start marker on the waveform, and a waveform annotated with FAS / LAS and a custom start point.</figcaption>
         </figure>
       </section>
@@ -938,32 +947,20 @@
           <p class="lead">Across the Auto DJ toolbar is a compact row of readouts that keeps you oriented against the clock. Every label is a single letter to save space.</p>
         </div>
 
-        <div class="device">
-          <div class="cockpit" role="img" aria-label="Cockpit readout row: L colon 1:05:29, E colon 23:36:22, T colon 12:00 AM, U colon 0:23:37, Cortina minus 35 s plus, LIVE">
-            <span class="rd"><span class="k">L:</span> 1:05:29</span><span class="sep"></span>
-            <span class="rd"><span class="k">E:</span> <span class="red">23:36:22</span></span><span class="sep"></span>
-            <span class="rd"><span class="k">T:</span> <span class="box">12:00&nbsp;AM</span></span><span class="sep"></span>
-            <span class="rd"><span class="grn">U: 0:23:37</span></span><span class="sep"></span>
-            <span class="rd"><span class="k">Cortina:</span> <span class="nudge">−</span> 35&nbsp;s <span class="nudge">+</span></span><span class="sep"></span>
-            <span class="live">LIVE</span>
-          </div>
-          <div class="cap">Live render of the cockpit row in the app's own colours.</div>
-        </div>
-
         <div class="legend" aria-label="Readout key">
-          <div class="row"><span class="sym">L:</span><span class="desc"><b>Length</b>: total running time of the whole set as queued.</span></div>
-          <div class="row o"><span class="sym">E:</span><span class="desc"><b>Ends</b>: the projected clock time your set will finish, shown in red.</span></div>
-          <div class="row"><span class="sym">T:</span><span class="desc"><b>Target</b>: the end time you're aiming for; editable at any time.</span></div>
-          <div class="row g"><span class="sym">U: / O:</span><span class="desc"><b>Under / Over</b>: how far the projection sits under (green) or over (red) your target.</span></div>
-          <div class="row"><span class="sym">Cortina:</span><span class="desc">Live cortina-length budget with <b>−</b> / <b>+</b> nudge.</span></div>
+          <div class="row"><span class="sym">L:</span><span class="lbl">Length</span><span class="desc">total running time of the whole set as queued.</span></div>
+          <div class="row o"><span class="sym">E:</span><span class="lbl">Ends</span><span class="desc">the projected clock time your set will finish, shown in red.</span></div>
+          <div class="row"><span class="sym">T:</span><span class="lbl">Target</span><span class="desc">the end time you're aiming for; editable at any time.</span></div>
+          <div class="row g"><span class="sym">U: / O:</span><span class="lbl">Under / Over</span><span class="desc">how far the projection sits under (green) or over (red) your target.</span></div>
+          <div class="row"><span class="sym">Cortina:</span><span class="lbl"></span><span class="desc">Live cortina-length budget with <b>−</b> / <b>+</b> nudge.</span></div>
         </div>
 
         <div class="prose">
           <p>Set <span class="ui">T:</span> to your target end time and the <span class="ui">U:</span> / <span class="ui">O:</span> readout tells you at a glance whether you're running under or over. Timing accounts for the gap between tracks and uses each track's audible span (Section 09), so trimmed silence isn't counted. There's also a duration readout for the total time of the currently selected tracks.</p>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 12 · 13</span><span class="file">12-cockpit-row.png · 13-target-overunder.png</span></div>
-          <figcaption>The cockpit row annotated, and the target end-time editor with the over/under readout in green / red.</figcaption>
+          <img src="assets/12-cockpit-row.png" alt="The TangoQ cockpit toolbar highlighted: Auto DJ controls, Tanda Transition mode, the L / E / T time readouts with the target end time, the U (under) / O (over) readout, the live cortina-length control, and the LIVE lock." />
+          <figcaption>The cockpit row (highlighted) holds the whole timing picture in one strip: the <span class="ui">T:</span> target end-time and the <span class="ui">U:</span> / <span class="ui">O:</span> over/under readout in green / red sit right in it.</figcaption>
         </figure>
       </section>
 
@@ -976,11 +973,7 @@
         </div>
 
         <div class="device">
-          <div class="hud" role="img" aria-label="HUD showing a two minute fourteen second countdown with tanda progress pips">
-            <div class="label">Next track in</div>
-            <div class="count">02:14</div>
-            <div class="pips"><span class="pip on"></span><span class="pip on"></span><span class="pip now"></span><span class="pip"></span></div>
-          </div>
+          <img src="assets/14-hud-2.png" alt="The TangoQ HUD: 'Next track in' above a large countdown, with a row of tanda progress pips below (two filled, one half, one empty)." style="display:block; width:100%; max-width:440px; margin:0 auto; border:1px solid var(--line); border-radius:10px;" />
           <div class="cap">The HUD counts down to the next track, cortina, or set end.</div>
         </div>
 
@@ -993,7 +986,7 @@
           </ul>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 14</span><span class="file">14-hud.png</span></div>
+          <img src="assets/14-hud.png" alt="The TangoQ window with the centered HUD showing a large countdown to the next event and a row of tanda progress pips." />
           <figcaption>The HUD countdown and progress pips, plus, if easy to capture, the final-30-second red "breathe".</figcaption>
         </figure>
       </section>
@@ -1003,12 +996,40 @@
         <p class="kicker">Section 13</p>
         <h2>Running a Milonga LIVE</h2>
         <div class="prose">
-          <p class="lead">LIVE mode is the difference between a rehearsal and a performance. Turn it on when the floor is yours.</p>
-          <p>Enter or exit LIVE from the <strong>LIVE indicator</strong> in the Auto DJ view (right-click it for the explicit Enter / Exit menu). The indicator glows red when LIVE is on and greys out when it's off.</p>
+          <p class="lead">LIVE mode is the difference between a test run and a 'Live DJ gig' in the presence of dancers. Turn it on when the floor is yours.</p>
+          <p>You enter and exit LIVE from the <strong>LIVE indicator</strong> in the Auto DJ view. When LIVE is <strong>off</strong>, the indicator sits greyed out; this is home-testing mode, without added protection.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/15a-live-mode-off.png" alt="The TangoQ toolbar with LIVE mode off, the indicator greyed out." />
+          <figcaption>LIVE <b>off</b>: the indicator is greyed and the performance safeguards are down.</figcaption>
+        </figure>
 
+        <div class="prose">
+          <p>To go live, right-click it for an <strong>Enter / Exit LIVE</strong> mode.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/17-live-menu.png" alt="The menu showing the Enter / Exit LIVE command." />
+          <figcaption>The explicit Enter / Exit LIVE menu, from a right-click on the indicator.</figcaption>
+        </figure>
+
+        <div class="prose">
+          <p>Once LIVE arms, the indicator glows <strong>red</strong>, the accidental-stop guard and keystroke suppression turn on, and the set is protected for the night.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/15b-live-mode-on.png" alt="The TangoQ toolbar with LIVE mode on, the LIVE indicator lit in red." />
+          <figcaption>LIVE <b>on</b>: the indicator is lit red and the safeguards are active.</figcaption>
+        </figure>
+
+        <div class="prose">
           <h3>The accidental-stop guard</h3>
           <p>While LIVE, stopping takes two deliberate actions. The first stop request only <strong>arms a short confirmation window</strong>: a red countdown drains over the Auto DJ button. A second stop request <em>within that window</em> actually stops. Let the window lapse and nothing happens, so a stray click can't kill the music.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/16-stop-guard.png" alt="The red stop-guard countdown draining as a pie over the Auto DJ button in LIVE mode." />
+          <figcaption>The red stop-guard countdown draining over the Auto DJ button, waiting for a confirming second press.</figcaption>
+        </figure>
 
+        <div class="prose">
           <div class="note live">
             <span class="tag">LIVE only</span>
             <p>While LIVE, the deck play/pause keys are suppressed so an accidental keypress can't stop the playing deck. Exit LIVE and normal control returns.</p>
@@ -1017,10 +1038,6 @@
           <h3>Now-playing highlight</h3>
           <p>The track playing now is shown in <strong>red</strong> in the Auto DJ list, so a glance tells you where you are in the set.</p>
         </div>
-        <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 15 · 16 · 17</span><span class="file">15-live-states.png · 16-stop-guard.png · 17-live-menu.png</span></div>
-          <figcaption>The LIVE indicator (off / on), the red stop-guard countdown draining over the Auto DJ button, and the Enter / Exit LIVE menu.</figcaption>
-        </figure>
       </section>
 
       <!-- 12 -->
@@ -1038,7 +1055,8 @@
           </ul>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 18</span><span class="file">18-sidepanel-docked.png · 18b-sidepanel-floating.png</span></div>
+          <img src="assets/18-sidepanel-docked.png" alt="The Auto DJ Side Panel docked beside the library in the TangoQ window." />
+          <img src="assets/18b-sidepanel-floating.png" alt="The Auto DJ Side Panel floating as its own separate window." />
           <figcaption>The Auto DJ Side Panel <b>docked</b> beside the library, and the same panel <b>floating</b> as its own window.</figcaption>
         </figure>
       </section>
@@ -1073,7 +1091,8 @@
           </div>
         </div>
         <figure class="shot">
-          <div class="shot__slot"><span class="cam">▤</span><span class="num">Screenshot 19 · 20</span><span class="file">19-milonga-timing.png · 20-prefs-autodj.png</span></div>
+          <img src="assets/19-milonga-timing.png" alt="The Milonga Timing toggles in the TangoQ skin Settings panel." />
+          <img src="assets/20-prefs-autodj.png" alt="Preferences → Auto DJ showing the TangoQ cortina fade and length controls." />
           <figcaption>The Milonga Timing toggles in the skin Settings panel, and the Preferences → Auto DJ cortina controls.</figcaption>
         </figure>
       </section>
@@ -1130,7 +1149,7 @@
         </dl>
         <hr class="rule">
         <div class="prose">
-          <p><b>TangoQ</b> is a fork of <a href="https://mixxx.org">Mixxx</a>, built on Mixxx 2.5.6. TangoQ © 2026 Seemanta Dutta. Mixxx © the Mixxx Development Team. Released under the GNU General Public License, version 2, the same license as Mixxx, whose copyright and license notices are retained in full. "Mixxx" is used only for legitimate attribution.</p>
+          <p><b>TangoQ</b> is an independent fork of <a href="https://mixxx.org">Mixxx</a> (version 2.5.6), released under the <b>GNU General Public License, version&nbsp;2</b> &mdash; the same license as Mixxx, with all original Mixxx copyright and license notices kept intact. TangoQ &copy; 2026 Seemanta Dutta; Mixxx &copy; the Mixxx Development Team. The name &ldquo;Mixxx&rdquo; appears here only to credit the project TangoQ is built on.</p>
         </div>
       </section>
 
