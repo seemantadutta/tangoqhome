@@ -1,0 +1,83 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Cormorant+Garamond:ital,wght@0,700;1,700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:2560px; height:1440px; overflow:hidden; }
+  .stage {
+    position:relative; width:2560px; height:1440px;
+    display:flex; align-items:center; justify-content:center;
+    background:
+      repeating-radial-gradient(circle at 50% 50%, transparent 0 118px, rgba(111,155,255,.035) 118px 121px),
+      radial-gradient(130% 120% at 50% 26%, #17223f 0%, #0b1022 46%, #070a14 100%);
+  }
+  .stage::after {
+    content:""; position:absolute; inset:0; z-index:1;
+    background: radial-gradient(120% 120% at 50% 50%, transparent 55%, rgba(3,5,10,.55) 100%);
+  }
+  .lockup { display:flex; align-items:center; gap:70px; z-index:2; }
+  .mark { width:300px; height:300px; border-radius:50%; overflow:hidden; flex:none;
+          box-shadow:0 24px 70px rgba(0,0,0,.45); }
+  .mark svg { display:block; width:300px; height:300px; }
+  .text { white-space:nowrap; }
+  .word { font-family:"Cormorant Garamond",Georgia,serif; font-weight:700;
+          font-size:210px; line-height:.9; color:#e9edfb; letter-spacing:.005em; }
+  .word .q { color:#ff516b; font-style:italic; }
+  .tag { font-family:"Playfair Display",Georgia,serif; font-weight:700;
+         font-size:66px; color:#e9edfb; margin-top:18px; line-height:1.05; }
+  .sub { font-family:"Inter",system-ui,sans-serif; font-weight:400;
+         font-size:34px; color:#97a1c4; margin-top:22px; letter-spacing:.01em; }
+  .sub .dot { color:#6f9bff; padding:0 14px; }
+</style></head>
+<body>
+  <div class="stage">
+    <div class="lockup">
+      <div class="mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="TangoQ">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#131b35"/>
+      <stop offset="1" stop-color="#0a0e1c"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Circular badge face. Fills the square with the same gradient as the macOS
+       icon; YouTube crops the corners to a circle, so no white ever shows. -->
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+
+  <!-- Brand rim: the squircle rim (inset 26, stroke 7, opacity .45) made circular
+       and scaled to hug the circular edge the same way it hugs the squircle. -->
+  <circle cx="512" cy="512" r="480" fill="none" stroke="#6f9bff" stroke-width="9" opacity="0.45"/>
+
+  <!-- The exact macOS-icon composition, scaled 1.243x about center so it fills the
+       circle in the same proportion it fills the squircle. -->
+  <g transform="translate(512 512) scale(1.2427) translate(-512 -512)">
+    <g transform="translate(512 452) scale(1.4) translate(-256 -206)">
+      <g transform="translate(256 206) scale(0.78) translate(-212 -212)">
+        <circle cx="212" cy="212" r="196" fill="#0c1122"/>
+        <circle cx="212" cy="212" r="189" fill="none" stroke="#6f9bff" stroke-width="11"/>
+        <circle cx="212" cy="212" r="152" fill="none" stroke="#2a3357" stroke-width="3.5"/>
+        <circle cx="212" cy="212" r="120" fill="none" stroke="#2a3357" stroke-width="3.5"/>
+        <circle cx="212" cy="212" r="72" fill="none" stroke="#6f9bff" stroke-width="4" opacity="0.38"/>
+        <circle cx="212" cy="212" r="46" fill="#e6314e"/>
+        <circle cx="212" cy="212" r="7" fill="#0c1122"/>
+      </g>
+      <circle cx="432" cy="80" r="16" fill="#e8ecf6"/>
+      <polyline points="432,80 332,292 291,327" fill="none" stroke="#e8ecf6" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="146" y1="404" x2="366" y2="404" stroke="#6f9bff" stroke-width="14" stroke-linecap="round"/>
+      <circle cx="190" cy="446" r="9" fill="#6f9bff"/>
+      <circle cx="234" cy="446" r="9" fill="#e6314e"/>
+      <circle cx="278" cy="446" r="9" fill="#6f9bff"/>
+      <circle cx="322" cy="446" r="9" fill="#e6314e"/>
+    </g>
+  </g>
+</svg>
+</div>
+      <div class="text">
+        <div class="word">Tango<span class="q">Q</span></div>
+        <div class="tag">DJ the room, not the playlist.</div>
+        <div class="sub">A tango-first DJ app<span class="dot">&bull;</span>tangoq.app</div>
+      </div>
+    </div>
+  </div>
+</body></html>
