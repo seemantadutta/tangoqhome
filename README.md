@@ -25,7 +25,6 @@ A custom domain later is just a `CNAME` file in this folder plus a DNS record.
 - **YouTube** tutorial/channel URL (hero + `youtube.com/@YOUR_CHANNEL`).
 - **GitHub Release** URLs for the Windows `.msi` and macOS `.dmg`.
 - **SHA-256 checksums** for each installer (build trust for unsigned binaries).
-- **PayPal.me** handle (`paypal.me/YOUR_HANDLE`).
 - **Fork repo URL** / default branch and the **compare** URL vs upstream.
 - **Build guide** path (currently `INSTALL.md`).
 - `og:url` in the `<head>`.
