@@ -272,8 +272,10 @@ img{max-width:100%;}
       var ids = chapters.map(function (b) { return b.dataset.v; });
       function play(i) {
         var f = document.createElement('iframe');
+        // YouTube starts at the first ID in &playlist= (ignoring the one in the path),
+        // so the chosen video must lead the list.
         f.src = 'https://www.youtube-nocookie.com/embed/' + ids[i] + '?autoplay=1&rel=0'
-              + (i < ids.length - 1 ? '&playlist=' + ids.slice(i + 1).join(',') : '');
+              + '&playlist=' + ids.slice(i).join(',');
         f.title = 'TangoQ video tutorials';
         f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
         f.allowFullscreen = true;
