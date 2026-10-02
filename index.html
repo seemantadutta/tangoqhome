@@ -98,6 +98,27 @@ img{max-width:100%;}
 .bth__cap{font-family:var(--sans);font-size:12.5px;color:var(--faint);text-align:center;margin:16px 0 0;letter-spacing:.02em;}
 .bth__cap span{color:var(--gold);}
 
+/* tutorial player (hero slot) - click-to-load so no YouTube code/cookies until the visitor asks */
+.bth__video{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#0a0806;cursor:pointer;color:var(--ink);font:inherit;}
+.bth__video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5;transition:opacity .25s;}
+.bth__video:hover img,.bth__video:focus-visible img{opacity:.38;}
+.bth__video:focus-visible{outline:2px solid var(--gold);outline-offset:-2px;}
+.bth__play{position:absolute;inset:0;background:radial-gradient(ellipse 45% 40% at 50% 55%,rgba(10,8,6,.75),transparent 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;}
+.bth__play i{width:clamp(64px,9vw,92px);height:clamp(64px,9vw,92px);border-radius:50%;background:var(--red);box-shadow:0 12px 40px rgba(224,80,63,.45);display:grid;place-items:center;transition:transform .2s,background .2s;}
+.bth__play i::after{content:"";margin-left:6px;border-style:solid;border-width:14px 0 14px 23px;border-color:transparent transparent transparent #fff;}
+.bth__video:hover .bth__play i{transform:scale(1.07);background:var(--red-hi);}
+.bth__play b{font-family:var(--serif);font-weight:700;font-size:clamp(1.25rem,2.6vw,1.9rem);letter-spacing:-.2px;text-shadow:0 2px 14px rgba(0,0,0,.8);}
+.bth__play small{font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-shadow:0 2px 10px rgba(0,0,0,.9);}
+.bth__frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0;}
+.bth__chapters{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
+@media (max-width:720px){.bth__chapters{grid-template-columns:1fr 1fr;}}
+.bth__chapters button{width:100%;height:100%;display:flex;align-items:center;gap:10px;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--muted);font:600 14px/1.25 var(--sans);text-align:left;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+.bth__chapters button:hover,.bth__chapters button:focus-visible{border-color:rgba(210,162,78,.5);color:var(--ink);}
+.bth__chapters button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+.bth__chapters button[aria-current="true"]{border-color:var(--red);color:var(--ink);background:rgba(224,80,63,.08);}
+.bth__chapters em{flex:none;font-style:normal;font-family:var(--sans);font-weight:700;font-size:13px;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);color:var(--gold);}
+.bth__chapters button[aria-current="true"] em{background:var(--red);border-color:var(--red);color:#fff;}
+
 /* ===== flip-card features (text only) ===== */
 .bth .feat{padding:clamp(56px,7vw,78px) 0 56px;}
 .bth .feat-hint{text-align:center;font-family:var(--serif2);font-style:italic;font-size:18px;color:var(--faint);margin:18px 0 0;}
@@ -179,6 +200,7 @@ img{max-width:100%;}
       <span class="bth__brand-word">Tango<em>Q</em></span>
     </a>
     <nav class="bth__nav" aria-label="Primary">
+      <a href="#tutorials">Tutorials</a>
       <a href="#features">Features</a>
       <a href="#source">Source</a>
       <a href="#faq">FAQ</a>
@@ -216,17 +238,52 @@ img{max-width:100%;}
     <div class="bth__cta">
       <!-- Points to the latest GitHub release, so the link always serves the newest installers. -->
       <a class="btn btn--p" href="https://github.com/seemantadutta/tangoq/releases/latest" target="_blank" rel="noopener">Get TangoQ 1.0.3</a>
+      <a class="btn btn--g" href="#tutorials">&#9654;&ensp;Watch the tutorials</a>
     </div>
     <p class="bth__meta">Built on Mixxx 2.5.6 <b>&middot;</b> Free &amp; open source <b>&middot;</b> Windows &amp; macOS <b>&middot;</b> GPL fork</p>
   </section>
 
-  <!-- ===================== HERO SCREENSHOT ===================== -->
-  <section class="bth__shot">
+  <!-- ===================== TUTORIALS PLAYER =====================
+       Sits in the hero slot so the walkthroughs are the first thing people see.
+       The hero screenshot is the poster; the YouTube player (privacy-enhanced
+       youtube-nocookie.com) only loads when the visitor clicks play.
+       Play order is set by the chapter buttons below (data-v = YouTube video ID),
+       not by the YouTube playlist, so reordering the playlist won't change the site.
+       Picking a chapter plays it, then the chapters after it, in order. -->
+  <section class="bth__shot" id="tutorials">
     <div class="bth__frame">
-      <img src="assets/tangoq-hero.png" width="2816" height="1576" alt="TangoQ running a tango set: the TangoQ toolbar shows the next-track countdown, set length, projected end time, an over/under indicator, a live cortina-length control and the LIVE lock, above a queue of Di Sarli tandas and cortinas." />
+      <button class="bth__video" type="button" aria-label="Play the TangoQ video tutorials from the beginning">
+        <img src="assets/tangoq-hero.png" width="2816" height="1576" alt="" />
+        <span class="bth__play"><i></i><b>See TangoQ in action</b><small>4 video tutorials</small></span>
+      </button>
     </div>
-    <p class="bth__cap">A typical milonga set, mid-session - <span>the cockpit, the queue, and the LIVE lock, all in one window</span></p>
+    <ol class="bth__chapters" aria-label="Tutorial chapters">
+      <li><button type="button" data-v="eEzgCkeJRvM"><em>1</em>Introduction</button></li>
+      <li><button type="button" data-v="RYDBWtb4rBI"><em>2</em>Install on macOS</button></li>
+      <li><button type="button" data-v="xXYfcL22Ero"><em>3</em>Install on Windows</button></li>
+      <li><button type="button" data-v="bCn43I8w_2c"><em>4</em>DJ a Milonga</button></li>
+    </ol>
+    <p class="bth__cap">Four short walkthroughs - <span>from first launch to running a milonga LIVE</span> &middot; <a href="https://www.youtube.com/playlist?list=PLD1MAXCCQrTw" target="_blank" rel="noopener">Watch on YouTube &rarr;</a></p>
   </section>
+  <script>
+    (function () {
+      var frame = document.querySelector('#tutorials .bth__frame');
+      var chapters = [].slice.call(document.querySelectorAll('.bth__chapters button'));
+      var ids = chapters.map(function (b) { return b.dataset.v; });
+      function play(i) {
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + ids[i] + '?autoplay=1&rel=0'
+              + (i < ids.length - 1 ? '&playlist=' + ids.slice(i + 1).join(',') : '');
+        f.title = 'TangoQ video tutorials';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        frame.replaceChildren(f);
+        chapters.forEach(function (b, j) { b.setAttribute('aria-current', j === i ? 'true' : 'false'); });
+      }
+      frame.querySelector('.bth__video').addEventListener('click', function () { play(0); });
+      chapters.forEach(function (b, i) { b.addEventListener('click', function () { play(i); }); });
+    })();
+  </script>
 
   <!-- ===================== FEATURES (flip cards) ===================== -->
   <section class="feat section" id="features" style="border-top:none">
@@ -553,6 +610,7 @@ img{max-width:100%;}
         <a href="https://mixxx.org" target="_blank" rel="noopener">Official Mixxx</a>
         <a href="https://github.com/seemantadutta/mixxx" target="_blank" rel="noopener">Source</a>
         <a href="https://github.com/seemantadutta/mixxx/issues" target="_blank" rel="noopener">Report a bug</a>
+        <a href="https://www.youtube.com/playlist?list=PLD1MAXCCQrTw" target="_blank" rel="noopener">Tutorials</a>
         <a href="https://paypal.me/seemanta" target="_blank" rel="noopener">Donate</a>
       </nav>
     </div>
